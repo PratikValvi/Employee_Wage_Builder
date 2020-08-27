@@ -14,6 +14,7 @@ class Employee_wage {
 	public static final int emp_full_time = 0;
 	public static final int emp_part_time = 1;
 	public static int max_working_days = 20;
+	public static int max_working_hours = 100;
 		
 	public static void main (String args[]) {
 		System.out.println("**********Welcome to Employee Wage Computation**********");
@@ -22,18 +23,26 @@ class Employee_wage {
 		int emp_wage=0;
 		int emp_hours=0;
 		int emp_total_wage=0;
+		int emp_hours_count=0;
 		
 		//Feature : Compute Employee Total Wage for Month
 		for (int i=1;i<=max_working_days;i++) {
-		
+			
+			//Feature : Check Employee Working Hours reached Maximum
+			if (emp_hours_count>=max_working_hours) {
+				break;
+			}
+			
 			//Feature : Check Employee Attendance
 			int emp_check = (int) (Math.random()*10)%3;
 			switch(emp_check) {
 				case emp_full_time:
 					emp_hours = 8; //Employee Hours for Full Time
+					emp_hours_count += 8;
 					break;
 				case emp_part_time:
 					emp_hours = 4; //Employee Hours for Part Time
+					emp_hours_count += 4;
 					break;
 				default:
 					emp_hours = 0; //Employee Absent
@@ -45,7 +54,7 @@ class Employee_wage {
 			emp_total_wage += emp_wage;
 			System.out.println("Employee Wage Day"+i+": "+emp_wage);
 		}
-		
+		System.out.println("Employee Total Working Hours in Month: "+emp_hours_count);
 		System.out.println("Employee Total Wage for Month: "+emp_total_wage);
 	}
 }
