@@ -15,9 +15,9 @@ class Employee_wage {
 	public static final int emp_part_time = 1;
 	public static int max_working_days = 20;
 	public static int max_working_hours = 100;
-		
-	public static void main (String args[]) {
-		System.out.println("**********Welcome to Employee Wage Computation**********");
+	
+	//Function to Compute Employee Wage
+	public static void computeWage() {
 		
 		//Variables
 		int emp_wage=0;
@@ -54,7 +54,13 @@ class Employee_wage {
 			emp_total_wage += emp_wage;
 			System.out.println("Employee Wage Day"+i+": "+emp_wage);
 		}
+
 		System.out.println("Employee Total Working Hours in Month: "+emp_hours_count);
 		System.out.println("Employee Total Wage for Month: "+emp_total_wage);
+	}
+		
+	public static void main (String args[]) {
+		System.out.println("**********Welcome to Employee Wage Computation**********");
+		computeWage();
 	}
 }
