@@ -10,20 +10,19 @@ author:Pratik R Valvi
 
 class Employee_wage {
 	//Constants
-	public static final int emp_rate_per_hour = 100;
 	public static final int emp_full_time = 0;
 	public static final int emp_part_time = 1;
-	public static int max_working_days = 20;
-	public static int max_working_hours = 100;
 	
-	//Function to Compute Employee Wage
-	public static void computeWage() {
+	//Function to Compute Employee Wage for Multiple Companies
+	public static void computeWage(String company_name, int max_working_days, int max_working_hours, int emp_rate_per_hour) {
 		
 		//Variables
 		int emp_wage=0;
 		int emp_hours=0;
 		int emp_total_wage=0;
 		int emp_hours_count=0;
+		
+		System.out.println("For Company: "+company_name);
 		
 		//Feature : Compute Employee Total Wage for Month
 		for (int i=1;i<=max_working_days;i++) {
@@ -54,13 +53,14 @@ class Employee_wage {
 			emp_total_wage += emp_wage;
 			System.out.println("Employee Wage Day"+i+": "+emp_wage);
 		}
-
 		System.out.println("Employee Total Working Hours in Month: "+emp_hours_count);
-		System.out.println("Employee Total Wage for Month: "+emp_total_wage);
+		System.out.println("Employee Total Wage of "+company_name+" for Month: "+emp_total_wage);
+		System.out.println();
 	}
 		
 	public static void main (String args[]) {
 		System.out.println("**********Welcome to Employee Wage Computation**********");
-		computeWage();
+		computeWage("Dmart",20,100,100);
+		computeWage("Ola",25,150,120);
 	}
 }
