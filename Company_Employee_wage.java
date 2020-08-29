@@ -12,7 +12,8 @@ public class Company_Employee_wage {
 		this.company_name = company_name;
 		this.max_working_days = max_working_days;
 		this.max_working_hours = max_working_hours;
-		this.emp_rate_per_hour = emp_rate_per_hour;		
+		this.emp_rate_per_hour = emp_rate_per_hour;
+		emp_total_wage=0;	
 	}
 	
 	//Function 
@@ -25,4 +26,3 @@ public class Company_Employee_wage {
 		return "Total Employee Wage for "+company_name+" is: "+emp_total_wage;
 	}
 }
-	
