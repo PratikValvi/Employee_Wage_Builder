@@ -1,3 +1,13 @@
+/* 
+Program for Computing Employee Wages
+*
+*
+version 1.0
+*
+*
+author:Pratik R Valvi
+*/
+
 import java.util.*;
 public class Employee_wage implements ICompany_Employee_wage {
 	//Constants
